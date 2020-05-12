@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Dark Pattern</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="modify.css">
+    <style>
+        body {
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 400;
+        }
+        #submit {
+            margin: 0 auto;
+            text-align: left;
+            max-width: 580px;
+            width: 100%;
+        }
+        input[type=text], textarea {
+            border-radius: 4px;
+            border: 1px solid #C2D0D8;
+            font-size: 18px;
+            padding: 12px 16px;
+            display: block;
+            width: 100%;
+            margin: 8px 0 32px;
+            outline: none;
+            transition: all .2s ease;
+            resize: none;
+            color: #1F2F47;
+            box-sizing: border-box;
+        }
+        input:focus, textarea:focus {
+            border: 1px solid #5B44E7;
+        }
+        input[type=submit] {
+            width: 100%;
+            border-radius: 4px;
+            font-size: 24px;
+            padding: 12px 16px;
+            display: block;
+            background-color: #5B44E7;
+            outline: none;
+            transition: all .2s ease;
+            color: #fff;
+            border: none;
+            font-weight: 600;
+        }
+        label {
+            font-size: 16px;
+            color: #1F2F47;
+            margin: 4px 0;
+            display: inline-block;
+        }
+        label span {
+            display: block;
+            font-size: 13px;
+            color: #1F2F47;
+            font-style: italic;
+        }
+        .select-group {
+            margin: 16px 0;
+        }
+        #thanks {
+            margin-top: 100px;
+            display: none;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="submit">
+        <h1>Add Dark Pattern</h1>
+        <form id="dp-form">
+            <label for="website">What is the website for this issue?
+                <span>Keep only the domain, ex: sub.domain.com or domain.com</span>
+            </label>
+            <input id="website" type="text" name="Website" type="text" required>
+            <label for="topic">What is the topic of the dark pattern? <span>Ex. Cancelling subscription</span></label>
+            <input id="topic" type="text"  name="Topic" type="text" required>
+            <div class="select-group">
+                <label>What platform is this for?</label><br>
+                <input id="Web" type="radio"  name="Platform" value="Website or Web App" checked>
+                <label for="Mobile">Website or Web Application</label><br>
+                <input id="Mobile" type="radio" name="Platform" value="Mobile Application">
+                <label for="Mobile">Mobile Application</label>
+            </div>
+            <label for="description">Describe how the pattern is displayed</label>
+            <textarea id="description" name="Description" required></textarea>
+            <label for="solution">How can users avoid or get around the pattern?<span>Leave blank if there is no avoidance</span></label>
+            <textarea id="solution" name="Solution"></textarea>
+            <input type="submit" id="send" value="Submit dark pattern">
+        </form>
+        <div class="version">BETA VERSION 0.1.0</div>
+    </div>
+    <div id="thanks">
+        Thank you, your submission was successful!
+    </div>
+    <script src="jquery.js"></script>
+    <script src="form/jquery.serialize-object.min.js"></script>
+    <script src="form/form.js"></script>
+</body>
+</html>
